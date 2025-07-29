@@ -1,0 +1,11 @@
+# Get Swahili verbs and their English definitions
+SELECT ?lexeme ?lemma ?definition_en WHERE {
+   ?lexeme a ontolex:LexicalEntry ;
+      ontolex:sense ?sense ;
+      dct:language ?language ;
+      wikibase:lemma ?lemma FILTER (lang(?lemma) = "sw") . # only get the lemma in the Latin alphabet variant of Swahili
+   ?language wdt:P218 'sw'. # get languages with the ISO code "sw" (i.e. Swahili)
+   ?lexeme wikibase:lexicalCategory wd:Q24905 . # get verbs
+   ?sense skos:definition ?definition_en FILTER (lang(?definition_en) = "en") . # get the definitions of the senses in English
+}
+ CC BY SA https://blog.johl.io/mimi-sisema-kiswahili-lakini-ninapenda-data/
