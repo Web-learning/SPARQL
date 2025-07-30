@@ -1,0 +1,14 @@
+#South African male rugby players with image
+#defaultView:ImageGrid
+
+SELECT DISTINCT ?item ?itemLabel ?image  WHERE {
+  ?item wdt:P27 wd:Q258.
+  ?item wdt:P21 wd:Q6581097.
+  ?item wdt:P31 wd:Q5.
+  ?item (wdt:P106/wdt:P279*) wd:Q14089670.
+  OPTIONAL { ?item wdt:P18 ?image. }
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+Thanks to African Studies in Wikimedia projects presented at WikiIndaba 2019 Abuja
+8/9/10 November 2019 Ursula Oberst
