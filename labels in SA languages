@@ -1,0 +1,9 @@
+SELECT ?item ?itemLabel_en ?itemLabel_zu ?itemLabel_xh ?itemLabel_st
+WHERE
+{
+  ?item wdt:P131/wdt:P131* wd:Q81725.
+  OPTIONAL {?item rdfs:label ?itemLabel_en. filter(lang(?itemLabel_en)="en") }
+  OPTIONAL {?item rdfs:label ?itemLabel_zu. filter(lang(?itemLabel_zu)="zu") }
+  OPTIONAL {?item rdfs:label ?itemLabel_xh. filter(lang(?itemLabel_xh)="xh") }
+  OPTIONAL {?item rdfs:label ?itemLabel_st. filter(lang(?itemLabel_st)="st") }
+}
