@@ -19,3 +19,4 @@ SELECT DISTINCT ?year ?ranking ?universityLabel ?deternimationMethodLabel ?unive
   BIND(STR(YEAR(?date)) AS ?year)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
 }
+#Adapted from the examples in SPARKL
