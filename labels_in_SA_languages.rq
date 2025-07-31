@@ -7,3 +7,4 @@ WHERE
   OPTIONAL {?item rdfs:label ?itemLabel_xh. filter(lang(?itemLabel_xh)="xh") }
   OPTIONAL {?item rdfs:label ?itemLabel_st. filter(lang(?itemLabel_st)="st") }
 }
+#extended an example that was asked on Wikidata 
