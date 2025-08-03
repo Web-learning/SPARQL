@@ -1,0 +1,17 @@
+#Query Adapted from Alex Stinson's tutorial on Writing a Wikidata Query: Discovering Women Writers from North Africa
+#Looking for South African female authors and their date of birth on a map
+SELECT ?item ?itemLabel ?placeofbirthLabel ?coord ?dob 
+WHERE {
+?item wdt:P27 wd:Q258.
+?item wdt:P21 wd:Q6581072.
+?item wdt:P69 wd:Q2021166.
+?item wdt:P31 wd:Q5.
+?item wdt:P106/wdt:P279* wd:Q36180.
+OPTIONAL {?item wdt:P19 ?placeofbirth.
+?placeofbirth wdt:P625 ?coord. }
+OPTIONAL {?item wdt:P18 ?image.}
+OPTIONAL {?item wdt:P569 ?dob.}
+SERVICE wikibase:label { bd:serviceParam wikibase:language "fr, ar ,en". }
+}
+#defaultView:Map
+
