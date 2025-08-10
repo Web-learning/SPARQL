@@ -1,0 +1,20 @@
+#People that have vernacular sitelinks to en.wiki
+#Credit  to Enitree
+SELECT DISTINCT ?item ?itemLabel ?article WHERE {
+
+      ?item wdt:P31 wd:Q5; # human
+            wdt:P569 ?birth;
+            wdt:P27 wd:Q258;
+    filter (?birth > "1700-01-01"^^xsd:dateTime && ?birth < "2000-01-01"^^xsd:dateTime) . #born in the 20th century
+    ?item wdt:P40 ?child.
+    ?item wdt:P22 ?father. 
+#     ?father wdt:P22 ?grandfather. #comment this 
+    ?article schema:about ?item .
+    ?article schema:isPartOf <https://xh.wikipedia.org/>.
+
+    SERVICE wikibase:label {
+       bd:serviceParam wikibase:language "xh"
+    }
+}
+
+LIMIT 2000
