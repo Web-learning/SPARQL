@@ -1,0 +1,13 @@
+#Credit to AfLIA WikiData training
+#defaultView:Map
+#Display the results as a Map
+
+SELECT distinct *
+#Display all available geographic coordinates
+
+WHERE {
+
+  ?item wdt:P31 wd:Q7075;     #Define the item as a library ";"(and) define the geographic coordinates of item as ?geo
+        wdt:P625 ?geo.
+
+}
