@@ -1,0 +1,10 @@
+SELECT ?pres ?presLabel ?spouse ?spouseLabel WHERE {
+   ?pres wdt:P31 wd:Q5 .
+   ?pres wdt:P39 wd:Q11696 .
+   ?pres wdt:P26 ?spouse .
+   SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en" .
+   }
+ }
+
+From https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries CC BY SA
