@@ -1,0 +1,8 @@
+#Public license publishers here in South Africa
+SELECT DISTINCT ?publisher ?publisherLabel WHERE {
+  ?publication wdt:P275 ?CCLicense;
+    wdt:P123 ?publisher.
+  ?CCLicense (wdt:P31/(wdt:P279*)) wd:Q7257461.
+  ?publisher wdt:P17 wd:Q258 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
