@@ -6,3 +6,4 @@ SELECT DISTINCT ?publisher ?publisherLabel WHERE {
   ?publisher wdt:P17 wd:Q258 .
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }
+#Adapted from Wikidata:WikiProject_Academic_Publisher
