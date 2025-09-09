@@ -1,0 +1,12 @@
+SELECT ?book ?title ?illustratorLabel ?publisherLabel ?published
+WHERE
+{
+  ?book wdt:P123 wd:Q22047708.
+  OPTIONAL { ?book wdt:P1476 ?title. }
+  OPTIONAL { ?book wdt:P110 ?illustrator. }
+  OPTIONAL { ?book wdt:P123 ?publisher. }
+  OPTIONAL { ?book wdt:P577 ?published. }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+}
+
+inspired by https://guitton.co/posts/wikidata
