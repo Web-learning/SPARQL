@@ -1,0 +1,16 @@
+#Which South African has the most Wikipedia articles in different languages  
+select ?person ?personLabel ?languageArticles {
+  {
+    select ?person (count(?article) as ?languageArticles) {
+	  ?person wikibase:sitelinks ?sitelinks .
+	  hint:Prior hint:runFirst true ; hint:rangeSafe true .
+	  filter (?sitelinks > 50)
+	  ?person wdt:P31 wd:Q5 .
+      ?person wdt:P27 wd:Q258 .
+ 
+	  ?article schema:about ?person ; schema:isPartOf/wikibase:wikiGroup "wikipedia" .
+	} group by ?person order by desc(?languageArticles) limit 20 
+  }
+  service wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+} order by desc(?languageArticles)
+#adapted from Amir E. Aharoni's example on Quora
