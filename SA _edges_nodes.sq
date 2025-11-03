@@ -52,3 +52,4 @@ WHERE {
   
   SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". }        
 }
+#Credit to https://scholia.toolforge.org/wikiproject/
