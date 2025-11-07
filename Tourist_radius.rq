@@ -1,0 +1,15 @@
+SELECT DISTINCT ?place ?placeLabel ?location ?distance WHERE
+    {
+      hint:Query hint:optimizer "None" .
+      wd:Q5465 wdt:P625 ?arcLoc . 
+      SERVICE wikibase:around { 
+          ?place wdt:P625 ?location . 
+          bd:serviceParam wikibase:center ?arcLoc . 
+          bd:serviceParam wikibase:radius "50" . 
+      } 
+      ?place wdt:P31/wdt:P279* wd:Q570116 .
+      SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "en" . 
+      }
+      BIND(geof:distance(?arcLoc, ?location) AS ?distance) 
+    } ORDER BY ASC(?distance)
