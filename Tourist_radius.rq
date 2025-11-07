@@ -13,3 +13,4 @@ SELECT DISTINCT ?place ?placeLabel ?location ?distance WHERE
       }
       BIND(geof:distance(?arcLoc, ?location) AS ?distance) 
     } ORDER BY ASC(?distance)
+#Credit to Stanislav Kralin who shared this 
