@@ -1,0 +1,9 @@
+#defaultView:Timeline
+SELECT ?book ?authorLabel ?bookLabel ?publication_date WHERE {
+  VALUES ?author {
+      wd:Q322060 #Douglas Coupland
+    }
+   ?book wdt:P50 ?author ;
+      wdt:P577 ?publication_date .
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
