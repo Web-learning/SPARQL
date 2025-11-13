@@ -1,8 +1,9 @@
-SELECT DISTINCT ?lang ?name WHERE {
+#On Wikipedia, what is the vernacular name given to South Africa
+SELECT DISTINCT ?language ?vernacularname WHERE {
   ?article schema:about wd:Q258. hint:Prior hint:runFirst true.
-  ?article schema:inLanguage ?lang ;
-    schema:name ?name ;
+  ?article schema:inLanguage ?language ;
+    schema:name ?vernacularname ;
     schema:isPartOf [ wikibase:wikiGroup "wikipedia" ] .
-  FILTER(?lang in ('en', 'af', 'nr', 'nso', 'ss', 'st', 'tn', 'ts', 've', 'xh', 'zu' )) .
-  FILTER (!CONTAINS(?name, ':')) .
+  FILTER(?language in ('en', 'af', 'nr', 'nso', 'ss', 'st', 'tn', 'ts', 've', 'xh', 'zu' )) .
+  FILTER (!CONTAINS(?vernacularname, ':')) .
 }
