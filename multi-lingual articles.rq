@@ -1,0 +1,7 @@
+#Look through all the languages on Wikipedia to find a multilingual links to articles about a specific person
+#Below I am looking for articles about Shaka Zulu Q27695 
+SELECT ?lang ?link ?article WHERE {
+?link schema:about wd:Q27695; schema:inLanguage ?lang; schema:name ?article
+FILTER(CONTAINS(str(?link), ".wikipedia.org/")) # only Wikipedia links
+}
+#Credit to Martin Poulter for Wikidat Query User:MartinPoulter/queries/equity_research
