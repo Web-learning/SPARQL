@@ -1,4 +1,3 @@
-#Credit to AfLIA WikiData training
 #defaultView:Map
 #Display the results as a Map
 
@@ -11,3 +10,8 @@ WHERE {
         wdt:P625 ?geo.
 
 }
+#Inspired by Museums in Antwerp
+#Look at AfLIA WikiData training
+
+
+
