@@ -1,3 +1,4 @@
+#Look for Bookdash books
 SELECT ?book ?title ?illustratorLabel ?publisherLabel ?published
 WHERE
 {
@@ -9,4 +10,4 @@ WHERE
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
 }
 
-inspired by https://guitton.co/posts/wikidata
+#inspired by https://guitton.co/posts/wikidata
