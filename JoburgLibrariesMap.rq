@@ -15,3 +15,4 @@ WHERE {
    }
 }
 ORDER BY ASC (?name)
+#Adapted from all museums in Barcelona with coordinates
