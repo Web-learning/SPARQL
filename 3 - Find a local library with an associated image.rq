@@ -1,0 +1,8 @@
+#defaultView:ImageGrid
+SELECT * WHERE
+{
+  ?item wdt:P31/wdt:P279*  wd:Q7075. #Entity that is a library and subclasses of libraries
+  ?item wdt:P17 wd:Q258. #Entity (coutry) South Africa
+  ?item wdt:P18 ?pic .  
+}
+#Adapted from Paintings by Gustav Klimt
