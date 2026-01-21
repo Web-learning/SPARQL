@@ -2,8 +2,8 @@
 SELECT ?item ?itemLabel ?coordinates
 WHERE
 {
- ?item wdt:P31/wdt:P279* wd:Q33506 ;
-       wdt:P131 wd:Q34647 ;
+ ?item wdt:P31/wdt:P279* wd:Q7075 ;
+       wdt:P131 wd:Q2346838;
        wdt:P625 ?coordinates .
  SERVICE wikibase:label { bd:serviceParam wikibase:language "nl, fr" }
  }
