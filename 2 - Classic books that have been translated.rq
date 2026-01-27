@@ -1,0 +1,18 @@
+SELECT ?book ?bookLabel_en ?bookLabel_af ?bookLabel_nr ?bookLabel_nso ?bookLabel_ss ?bookLabel_st ?bookLabel_tn ?bookLabel_ts ?bookLabel_ve ?bookLabel_xh ?bookLabel_zu WHERE {
+    ?book wdt:P50 wd:Q692. #The most translated author
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "en". ?book rdfs:label ?bookLabel_en } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "af". ?book rdfs:label ?bookLabel_af } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "nr". ?book rdfs:label ?bookLabel_nr } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "nso". ?book rdfs:label ?bookLabel_nso } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ss". ?book rdfs:label ?bookLabel_ss } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "st". ?book rdfs:label ?bookLabel_st } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "tn". ?book rdfs:label ?bookLabel_tn } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". ?book rdfs:label ?bookLabel_ts } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?book rdfs:label ?bookLabel_ve } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". ?book rdfs:label ?bookLabel_xh } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". ?book rdfs:label ?bookLabel_zu } }
+
+  
+}
+#Based on a query to identify Arthur Conan Doyle books
+#Change the Q number to the authors name
