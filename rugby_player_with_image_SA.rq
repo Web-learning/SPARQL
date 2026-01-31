@@ -10,5 +10,5 @@ SELECT DISTINCT ?item ?itemLabel ?image  WHERE {
  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 
-Adapted a query used in a presentation about African Studies in Wikimedia projects presented at WikiIndaba 2019 Abuja
+#Adapted from query used in a presentation about African Studies in Wikimedia projects presented at WikiIndaba 2019 Abuja
 8/9/10 November 2019 Ursula Oberst
