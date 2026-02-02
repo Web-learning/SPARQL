@@ -1,0 +1,6 @@
+#title: Number of South African Citizens on Wikidata
+SELECT (COUNT(*) AS ?count)
+WHERE {
+  ?item wdt:P31 wd:Q5 ;
+wdt:P27 wd:Q258 .
+ }
