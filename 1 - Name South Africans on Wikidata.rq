@@ -1,0 +1,8 @@
+#What are the names of South Africans on Wikidata
+SELECT ?human ?humanLabel
+WHERE
+{
+  ?human wdt:P31 wd:Q5 ;
+wdt:P27 wd:Q258 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en" }
+}
