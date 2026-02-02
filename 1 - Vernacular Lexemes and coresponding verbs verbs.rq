@@ -1,11 +1,18 @@
-# Get Zulu verbs and their English definitions
-SELECT ?lexeme ?lemma ?definition_en WHERE {
+# Get Zulu verbs and their multilingual definitions
+# 
+SELECT ?lexeme ?lemma ?definition_en ?definition_ru ?definition_af ?definition_ss ?definition_xh ?definition_zu WHERE {
    ?lexeme a ontolex:LexicalEntry ;
       ontolex:sense ?sense ;
       dct:language ?language ;
-      wikibase:lemma ?lemma FILTER (lang(?lemma) = "zu") . # only get the lemma in the Latin alphabet variant of Swahili
+      wikibase:lemma ?lemma FILTER (lang(?lemma) = "zu") . # only get the lemma in the Latin alphabet variant of Zulu
    ?language wdt:P218 'zu'. # get languages with the ISO code "zu" (i.e. Zulu)
    ?lexeme wikibase:lexicalCategory wd:Q24905 . # get verbs
-   ?sense skos:definition ?definition_en FILTER (lang(?definition_en) = "en") . # get the definitions of the senses in English
+ OPTIONAL{?sense skos:definition ?definition_en FILTER (lang(?definition_en) = "en") . }# get the definitions of the senses in English
+  OPTIONAL{?sense skos:definition ?definition_af FILTER (lang(?definition_af) = "af") .} # get the definitions of the senses in Afrikaans
+ OPTIONAL{?sense skos:definition ?definition_ss FILTER (lang(?definition_ss) = "ss") .} # get the definitions of the senses in Siswati
+ OPTIONAL{?sense skos:definition ?definition_xh FILTER (lang(?definition_xh) = "xh") .} # get the definitions of the senses in IsiXhosa
+OPTIONAL{?sense skos:definition ?definition_zu FILTER (lang(?definition_zu) = "zu") .} # get the definitions of the senses in IsiZulu
+
+  
 }
  ##CC BY SA https://blog.johl.io/mimi-sisema-kiswahili-lakini-ninapenda-data/
