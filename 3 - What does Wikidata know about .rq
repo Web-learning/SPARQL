@@ -1,0 +1,4 @@
+SELECT ?itemLabel WHERE {
+ wd:Q1001 rdfs:label ?itemLabel .
+ FILTER(LANG(?itemLabel) = "en")
+}
