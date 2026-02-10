@@ -1,8 +1,14 @@
+# ───────────────────────────────────────────────────────────────
+# Show a selected picture of a South Africa library that correspods with their Wikidata entry 
+# ───────────────────────────────────────────────────────────────
+
 #defaultView:ImageGrid
 SELECT * WHERE
 {
-  ?item wdt:P31/wdt:P279*  wd:Q7075. #Entity that is a library and subclasses of libraries
-  ?item wdt:P17 wd:Q258. #Entity (coutry) South Africa
-  ?item wdt:P18 ?pic .  
+  ?library wdt:P31/wdt:P279*  wd:Q7075. #Create a basket for library beads and their subclasses 
+  ?library wdt:P17 wd:Q258. #Create another basket for South African libraries and link them to library beads
+  ?library wdt:P18 ?pic .  #Create another basket of Photos and link them to South African libraries
 }
+# ───────────────────────────────────────────────────────────────
 #Adapted from Paintings by Gustav Klimt
+# ───────────────────────────────────────────────────────────────
