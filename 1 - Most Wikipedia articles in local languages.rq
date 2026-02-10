@@ -1,5 +1,5 @@
-# ───────────────────────────────────────────────────────────────
-# Which South African has the most Wikipedia articles and do they have vernacular language 
+ui# ───────────────────────────────────────────────────────────────
+# Which South African has the most Wikipedia articles and do they have a vernacular language equivalent 
 # ───────────────────────────────────────────────────────────────
 
 select ?person ?personLabel ?wiki_article_count ?personLabel_af ?personLabel_nr ?personLabel_nso ?personLabel_ss ?personLabel_st ?personLabel_tn ?personLabel_ts ?personLabel_ve ?personLabel_xh ?personLabel_zu {
