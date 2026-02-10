@@ -1,5 +1,8 @@
-#Which South African has the most Wikipedia articles in local languages  
-select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nso ?personLabel_ss ?personLabel_st ?personLabel_tn ?personLabel_ts ?personLabel_ve ?personLabel_xh ?personLabel_zu {
+# ───────────────────────────────────────────────────────────────
+# Which South African has the most Wikipedia articles in vernacular  
+# ───────────────────────────────────────────────────────────────
+
+select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nr ?personLabel_nso ?personLabel_ss ?personLabel_st ?personLabel_tn ?personLabel_ts ?personLabel_ve ?personLabel_xh ?personLabel_zu {
   {
     select ?person (count(?article) as ?languageArticles) {
 	  ?person wikibase:sitelinks ?sitelinks .
@@ -23,4 +26,3 @@ select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nso ?
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?person rdfs:label ?personLabel_ve } }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". ?person rdfs:label ?personLabel_xh } }
 } order by desc(?languageArticles)
-#adapted from Amir E. Aharoni's example on Quora
