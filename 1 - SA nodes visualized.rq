@@ -1,5 +1,10 @@
 PREFIX target: <http://www.wikidata.org/entity/Q258>
 #defaultView:Graph
+# ───────────────────────────────────────────────────────────────
+# Show South African nodes and their edges that correspods with the Wikidata entry Q258. Show the results in vernacular (see bottom)
+# ───────────────────────────────────────────────────────────────
+
+
 SELECT ?node ?nodeLabel ?nodeImage ?childNode ?childNodeLabel ?childNodeImage ?rgb 
 WITH {
   SELECT DISTINCT ?property WHERE {
@@ -50,6 +55,10 @@ WHERE {
     ?childNode ?childNodeclaim ?childNodeImage. 
   }
   
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". }        
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". } #Change the language code       
 }
+
+# ───────────────────────────────────────────────────────────────
 #Credit to https://scholia.toolforge.org/wikiproject/
+# ───────────────────────────────────────────────────────────────
+
