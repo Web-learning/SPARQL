@@ -1,10 +1,10 @@
 # ───────────────────────────────────────────────────────────────
-# Which South African has the most Wikipedia articles in vernacular  
+# Which South African has the most Wikipedia articles and do they have vernacular language 
 # ───────────────────────────────────────────────────────────────
 
-select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nr ?personLabel_nso ?personLabel_ss ?personLabel_st ?personLabel_tn ?personLabel_ts ?personLabel_ve ?personLabel_xh ?personLabel_zu {
+select ?person ?personLabel ?wiki_article_count ?personLabel_af ?personLabel_nr ?personLabel_nso ?personLabel_ss ?personLabel_st ?personLabel_tn ?personLabel_ts ?personLabel_ve ?personLabel_xh ?personLabel_zu {
   {
-    select ?person (count(?article) as ?languageArticles) {
+    select ?person (count(?article) as ?wiki_article_count) {
 	  ?person wikibase:sitelinks ?sitelinks .
 	  hint:Prior hint:runFirst true ; hint:rangeSafe true .
 	  filter (?sitelinks > 50)
@@ -12,7 +12,7 @@ select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nr ?p
       ?person wdt:P27 wd:Q258 .
  
 	  ?article schema:about ?person ; schema:isPartOf/wikibase:wikiGroup "wikipedia" .
-	} group by ?person order by desc(?languageArticles) limit 20 
+	} group by ?person order by desc(?wiki_article_count) limit 20 
   }
   #service wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "en". ?person rdfs:label ?personLabel } }
@@ -25,4 +25,4 @@ select ?person ?personLabel ?languageArticles ?personLabel_af ?personLabel_nr ?p
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". ?person rdfs:label ?personLabel_ts } }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?person rdfs:label ?personLabel_ve } }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". ?person rdfs:label ?personLabel_xh } }
-} order by desc(?languageArticles)
+} order by desc(?wiki_article_count)
