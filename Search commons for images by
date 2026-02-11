@@ -1,5 +1,0 @@
-#defaultView:ImageGrid	
-SELECT ?image   {
-  ?file wdt:P6305 "2013062010004691" .
-  ?file schema:url ?image.
-} 
