@@ -1,0 +1,21 @@
+#----------------------------------------------------------------
+#List of SA universities on Wikidata and their labels in all vernacular languages
+#----------------------------------------------------------------
+SELECT distinct ?uni ?label_en ?label_af ?label_nr ?label_nso ?label_ss ?label_st ?label_tn ?label_ts ?label_ve ?label_xh ?label_zu 
+WHERE
+{
+ ?uni p:P31/ps:P31/wdt:P279* wd:Q3918.
+  ?uni wdt:P17 wd:Q258.
+  OPTIONAL {?uni rdfs:label ?label_af filter (lang(?label_af) = "af").}
+  OPTIONAL {?uni rdfs:label ?label_nr filter (lang(?label_nr) = "nr").}
+  OPTIONAL {?uni rdfs:label ?label_nso filter (lang(?label_nso) = "nso").}
+  OPTIONAL {?uni rdfs:label ?label_ss filter (lang(?label_ss) = "ss").}
+  OPTIONAL {?uni rdfs:label ?label_st filter (lang(?label_st) = "st").}
+  OPTIONAL {?uni rdfs:label ?label_tn filter (lang(?label_tn) = "tn").}
+  OPTIONAL {?uni rdfs:label ?label_ts filter (lang(?label_ts) = "ts").}
+  OPTIONAL {?uni rdfs:label ?label_ve filter (lang(?label_ve) = "ve").}
+  OPTIONAL {?uni rdfs:label ?label_xh filter (lang(?label_xh) = "xh").}
+  OPTIONAL {?uni rdfs:label ?label_zu filter (lang(?label_zu) = "zu").}
+
+}
+
