@@ -1,0 +1,16 @@
+#----------------------------------------------------------------
+#Timeline of books by a certain author on Wikidata 
+#----------------------------------------------------------------
+#defaultView:Timeline
+SELECT distinct ?book ?authorLabel ?bookLabel ?publication_date WHERE {
+  VALUES ?author {
+      wd:Q322060 #Douglas Coupland
+    }
+   ?book wdt:P50 ?author ;
+      wdt:P577 ?publication_date .
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+#----------------------------------------------------------------
+#Adapted from Books by a given Author including genres and date of first publication
+#----------------------------------------------------------------
