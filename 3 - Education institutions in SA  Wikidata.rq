@@ -1,0 +1,13 @@
+# ───────────────────────────────────────────────────────────────
+# Can you identify identify primary schools (Q9842), high schools (Q9826) or Universities (Q3918) in South Africa on Wikidata 
+# ───────────────────────────────────────────────────────────────
+
+#defaultView:Map
+SELECT DISTINCT ?item ?itemLabel ?coordinates WHERE
+{
+?item wdt:P17 wd:Q258 .
+?item wdt:P31/wdt:P279*  wd:Q9826 . 
+?item wdt:P625 ?coordinates .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
+}
