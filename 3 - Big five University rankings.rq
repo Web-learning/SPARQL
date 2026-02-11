@@ -9,6 +9,7 @@ SELECT DISTINCT ?year ?ranking ?universityLabel ?deternimationMethodLabel ?unive
     wd:Q951305
     wd:Q1972050
     wd:Q1066492
+    wd:Q604444
      }
   VALUES ?deternimationMethod {
     wd:Q1790510
@@ -20,4 +21,6 @@ SELECT DISTINCT ?year ?ranking ?universityLabel ?deternimationMethodLabel ?unive
   BIND(STR(YEAR(?date)) AS ?year)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],zu". }
 }
+# ───────────────────────────────────────────────────────────────
 #Adapted from the examples in SPARKL
+# ───────────────────────────────────────────────────────────────
