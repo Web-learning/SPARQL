@@ -1,0 +1,18 @@
+# ───────────────────────────────────────────────────────────────
+# Map of South African neighboring countries (answers in Zulu)
+# ───────────────────────────────────────────────────────────────
+
+#defaultView:Map
+SELECT ?sharedborder ?sharedborderLabel ?coords ?layer
+WHERE 
+{                                         
+	?sharedborder p:P47 [ps:P47 wd:Q258]. #  Who shares a border with South Africa
+	?sharedborder p:P31 [ps:P31 wd:Q6256].#  Name the countries
+	OPTIONAL {?sharedborder wdt:P3896 ?coords.} # If there is a geoshape please use it
+	BIND (?coords AS ?layer)
+	SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". } 
+}
+
+# ───────────────────────────────────────────────────────────────
+# Adapted from https://en.wikiversity.org/wiki/Research_in_programming_Wikidata/Countries#List_of_countries
+# ───────────────────────────────────────────────────────────────
