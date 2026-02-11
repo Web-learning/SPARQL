@@ -1,7 +1,11 @@
+# ───────────────────────────────────────────────────────────────
+# What alternative library can I go to? 
+# ───────────────────────────────────────────────────────────────
+
 SELECT DISTINCT ?place ?placeLabel ?location ?distance WHERE
     {
       hint:Query hint:optimizer "None" .
-      wd:Q5465 wdt:P625 ?arcLoc . 
+      wd:Q5465 wdt:P625 ?arcLoc . #Change the location 
       SERVICE wikibase:around { 
           ?place wdt:P625 ?location . 
           bd:serviceParam wikibase:center ?arcLoc . 
