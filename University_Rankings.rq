@@ -1,14 +1,15 @@
-# looking at yearly ranking(s) of South African universities using the QS World University Rankings
+# ───────────────────────────────────────────────────────────────
+# Plot out the yearly ranking(s) of the big five South African universities using the QS World University Rankings
+# ───────────────────────────────────────────────────────────────
+
 #defaultView:LineChart
-# to add another university :
-# to add another deternimationMethod :
 SELECT DISTINCT ?year ?ranking ?universityLabel ?deternimationMethodLabel ?university WHERE {
      VALUES ?university {
     wd:Q534643
     wd:Q951305
     wd:Q1972050
     wd:Q1066492
-    }
+     }
   VALUES ?deternimationMethod {
     wd:Q1790510
   } 
@@ -17,6 +18,6 @@ SELECT DISTINCT ?year ?ranking ?universityLabel ?deternimationMethodLabel ?unive
     pq:P459 ?deternimationMethod;
     pq:P585 ?date.
   BIND(STR(YEAR(?date)) AS ?year)
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],zu". }
 }
 #Adapted from the examples in SPARKL
