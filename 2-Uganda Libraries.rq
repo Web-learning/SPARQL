@@ -1,3 +1,8 @@
+#------------------------------
+#Libraries that are located in Uganda
+#------------------------------
+
+
 SELECT DISTINCT ?item ?itemLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
   {
@@ -10,3 +15,7 @@ SELECT DISTINCT ?item ?itemLabel WHERE {
     LIMIT 100
   }
 }
+
+#------------------------------
+#Credit to Micheal Kaluba from Uganda for this query
+#------------------------------
