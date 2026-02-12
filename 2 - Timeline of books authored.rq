@@ -4,11 +4,22 @@
 #defaultView:Timeline
 SELECT distinct ?book ?authorLabel ?bookLabel ?publication_date WHERE {
   VALUES ?author {
-      wd:Q322060 #Douglas Coupland
+      wd:Q8023  #Nelson Mandela
     }
    ?book wdt:P50 ?author ;
       wdt:P577 ?publication_date .
-   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "af". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "nso". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "nr". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "ss". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". }
+    #SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". }
+    service wikibase:label { bd:serviceParam wikibase:language "en". }
+
+  
 }
 
 #----------------------------------------------------------------
