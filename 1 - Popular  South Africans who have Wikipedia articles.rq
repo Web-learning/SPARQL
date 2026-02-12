@@ -1,4 +1,6 @@
-#Which South African has the most Wikipedia articles in different languages  
+#---------------------------------------------------------
+#Who are popular South Africans that have many vernacular language articles?  
+#---------------------------------------------------------
 select ?person ?personLabel ?languageArticles {
   {
     select ?person (count(?article) as ?languageArticles) {
