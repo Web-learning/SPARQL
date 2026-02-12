@@ -1,5 +1,5 @@
 # ───────────────────────────────────────────────────────────────
-#What Wikipedia articles are available about a specific person in multiple languages. Change the Q number
+#What Wikipedia articles in multiple languages. Change the Q number
 # ───────────────────────────────────────────────────────────────
 
 SELECT ?lang ?link ?linkLabel WHERE {
