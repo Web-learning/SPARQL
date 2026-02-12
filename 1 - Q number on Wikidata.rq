@@ -1,5 +1,0 @@
-#Who has the highest (or lowest) ranking on Wikidata
-SELECT * WHERE {
-?X <https://www.wikidata.org/wiki/Property:P31> <https://www.wikidata.org/wiki/Q5>
-}
-Limit 10
