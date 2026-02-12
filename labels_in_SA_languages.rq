@@ -1,10 +1,24 @@
-SELECT ?item ?itemLabel_en ?itemLabel_zu ?itemLabel_xh ?itemLabel_st
+# ───────────────────────────────────────────────────────────────
+# Wikidata spatial labels with a vernacular language equivalent in a province KZN Q133083 or Gauteng Q133083 or Eastern Cape Q130840
+# ───────────────────────────────────────────────────────────────
+
+SELECT DISTINCT ?item ?itemLabel_en ?itemLabel_af ?itemLabel_nr ?itemLabel_nso ?itemLabel_ss ?itemLabel_st ?itemLabel_tn ?itemLabel_ts ?itemLabel_ve ?itemLabel_xh ?itemLabel_zu
 WHERE
 {
-  ?item wdt:P131/wdt:P131* wd:Q81725.
+  ?item wdt:P131/wdt:P131* wd:Q130840. 
   OPTIONAL {?item rdfs:label ?itemLabel_en. filter(lang(?itemLabel_en)="en") }
-  OPTIONAL {?item rdfs:label ?itemLabel_zu. filter(lang(?itemLabel_zu)="zu") }
-  OPTIONAL {?item rdfs:label ?itemLabel_xh. filter(lang(?itemLabel_xh)="xh") }
+  OPTIONAL {?item rdfs:label ?itemLabel_af. filter(lang(?itemLabel_af)="af") }
+  OPTIONAL {?item rdfs:label ?itemLabel_nr. filter(lang(?itemLabel_nr)="nr") }
+  OPTIONAL {?item rdfs:label ?itemLabel_nso. filter(lang(?itemLabel_nso)="nso") }
+  OPTIONAL {?item rdfs:label ?itemLabel_ss. filter(lang(?itemLabel_ss)="ss") }
   OPTIONAL {?item rdfs:label ?itemLabel_st. filter(lang(?itemLabel_st)="st") }
+  OPTIONAL {?item rdfs:label ?itemLabel_tn. filter(lang(?itemLabel_tn)="tn") }
+  OPTIONAL {?item rdfs:label ?itemLabel_ts. filter(lang(?itemLabel_ts)="ts") }
+  OPTIONAL {?item rdfs:label ?itemLabel_ve. filter(lang(?itemLabel_ve)="ve") }
+  OPTIONAL {?item rdfs:label ?itemLabel_xh. filter(lang(?itemLabel_xh)="xh") }
+  OPTIONAL {?item rdfs:label ?itemLabel_zu. filter(lang(?itemLabel_zu)="zu") }
+
 }
+# ───────────────────────────────────────────────────────────────
 #extended an example that was asked on Wikidata 
+# ───────────────────────────────────────────────────────────────
