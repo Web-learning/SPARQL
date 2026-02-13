@@ -1,10 +1,10 @@
 # ───────────────────────────────────────────────────────────────
-#What Wikipedia articles in multiple languages. Change the Q number
+#What Wikipedia articles are available in multiple languages. Change the Q number from respect Q28510 to  rigour  Q2890076
 # ───────────────────────────────────────────────────────────────
 
 SELECT ?lang ?link ?linkLabel WHERE {
-?link schema:about wd:Q1001; schema:inLanguage ?lang; schema:name ?linkLabel
-FILTER(CONTAINS(str(?link), ".wikipedia.org/")) # only Wikipedia links
+?link schema:about wd:Q28510; schema:inLanguage ?lang; schema:name ?linkLabel
+FILTER(CONTAINS(str(?link), ".wikipedia.org/")) # only Wikipedia links 
 }
 # ───────────────────────────────────────────────────────────────
 #Credit to Martin Poulter for Wikidat Query User:MartinPoulter/queries/equity_research
