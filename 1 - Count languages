@@ -8,3 +8,4 @@ WHERE {
     bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".
   }
 }
+#Credit Mother Language Day 2026 Datathon
