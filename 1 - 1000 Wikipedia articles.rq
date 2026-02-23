@@ -1,3 +1,6 @@
+#------------------------------------------------------
+# Query to count the number of articles vernacular Wikipedia actually has
+#------------------------------------------------------
 SELECT ?item ?itemLabel ?itemLabel_af ?itemLabel_nso ?itemLabel_tn ?itemLabel_ts ?itemLabel_ve ?itemLabel_zu ?sitelinksNo ?statementsNo WHERE{
   ?item wdt:P5008 wd:Q5460604 . 
   OPTIONAL {?item wikibase:sitelinks ?sitelinksNo } . 
@@ -12,3 +15,6 @@ SELECT ?item ?itemLabel ?itemLabel_af ?itemLabel_nso ?itemLabel_tn ?itemLabel_ts
   
 } 
 ORDER BY ?item
+#------------------------------------------------------
+# Adapted from Wikidata:List of 1000 articles every Wikipedia should have
+#------------------------------------------------------
