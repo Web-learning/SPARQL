@@ -3,7 +3,7 @@ Welcome to my SPARQL collection. I'm teaching myself a new language, as it allow
 These SPARQL queries are divided into three main themes
 * Multi-lingual related queries
 * Library, research and book related queries
-* Knowledge graph (maps, families)   queries  
+* Knowledge graph (constructing maps, building family trees, updating Wikidata) queries  
 
 ## 📚 Overall Outcomes 🎯
 I'd like people to be able to create vernacular language knowledge graphs. 
