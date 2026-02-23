@@ -1,0 +1,24 @@
+#---------------------------------------------
+#title:List of languages in Wikidata. Time outs are a problem. So don't use every language option
+#--------------------------------------------
+SELECT
+  ?language
+  ?languageLabel
+  ?languageLabel_af ?languageLabel_nr ?languageLabel_nso ?languageLabel_ss ?languageLabel_st ?languageLabel_tn ?languageLabel_ts ?languageLabel_ve ?languageLabel_xh ?languageLabel_zu
+WHERE {
+  ?language wdt:P31 wd:Q34770;
+
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "en". ?language rdfs:label ?languageLabel } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "af". ?language rdfs:label ?languageLabel_af } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "nr". ?language rdfs:label ?languageLabel_nr } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "nso". ?language rdfs:label ?languageLabel_nso } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ss". ?language rdfs:label ?languageLabel_ss } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "st". ?language rdfs:label ?languageLabel_st } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "tn". ?language rdfs:label ?languageLabel_tn } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". ?language rdfs:label ?languageLabel_ts } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?language rdfs:label ?languageLabel_ve } }
+   #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". ?language rdfs:label ?languageLabel_xh } }
+}
+#---------------------------------------------
+#Credit Mother Language Day 2026 Datathon
+#---------------------------------------------
