@@ -1,15 +1,13 @@
 # SPARQL 👋 
-Welcome to my SPARQL collection. I'm teaching myself a new language, as it allows me to see the world differently.
-These SPARQL queries are divided into three main themse
-* Multinlingual queries
-* Library focussed queries
-* Knowledge graph queries  
+Welcome to my SPARQL collection. I'm teaching myself a new language, as it allows me to see my  world from a different perspective.
+These SPARQL queries are divided into three main themes
+* Multi-lingual related queries
+* Library, research and book related queries
+* Knowledge graph (maps, families)   queries  
 
-## 📚 Learning Outcomes 🎯
+## 📚 Overall Outcomes 🎯
 
-I'm learning SPARQL and I'm wanting to find a way to store all my statements 
+I'd like to both curate and store and rework the SPARQL queries that I come accross 
 
-### University Rankings
-*South African Universities
-
-Thanks to Leigh Dodds and here tutorial on [[https://blog.ldodds.com/2013/01/31/publishing-sparql-queries-and-documentation-using-github/ |Publishing SPARQL queries and documentation using github]]
+### Credit
+Thanks to Leigh Dodds and her tutorial on [[https://blog.ldodds.com/2013/01/31/publishing-sparql-queries-and-documentation-using-github/ |Publishing SPARQL queries and documentation using github]]
