@@ -1,0 +1,14 @@
+SELECT ?item ?itemLabel ?itemLabel_af ?itemLabel_nso ?itemLabel_tn ?itemLabel_ts ?itemLabel_ve ?itemLabel_zu ?sitelinksNo ?statementsNo WHERE{
+  ?item wdt:P5008 wd:Q5460604 . 
+  OPTIONAL {?item wikibase:sitelinks ?sitelinksNo } . 
+  OPTIONAL {?item wikibase:statements ?statementsNo } 
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+    #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "af". ?item rdfs:label ?itemLabel_af } }
+    #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "nso". ?item rdfs:label ?itemLabel_nso } }
+    #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "tn". ?item rdfs:label ?itemLabel_tn } }
+    #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". ?item rdfs:label ?itemLabel_ts } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?item rdfs:label ?itemLabel_ve } }
+    #OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". ?item rdfs:label ?itemLabel_zu } }
+  
+} 
+ORDER BY ?item
