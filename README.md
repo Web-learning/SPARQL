@@ -1,5 +1,9 @@
 # SPARQL 👋 
-Sparkle with my rough collection of protocol and RDF query language (SPARQL)
+Welcome to my SPARQL collection. I'm teaching myself a new language, as it allows me to see the world differently.
+These SPARQL queries are divided into three main themse
+* Multinlingual queries
+* Library focussed queries
+* Knowledge graph queries  
 
 ## 📚 Learning Outcomes 🎯
 
