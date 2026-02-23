@@ -25,4 +25,6 @@ select ?person ?personLabel ?wiki_article_count ?personLabel_af ?personLabel_nr 
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ts". ?person rdfs:label ?personLabel_ts } }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "ve". ?person rdfs:label ?personLabel_ve } }
     OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "xh". ?person rdfs:label ?personLabel_xh } }
+    OPTIONAL { SERVICE wikibase:label { bd:serviceParam wikibase:language "zu". ?person rdfs:label ?personLabel_zu } }
+		
 } order by desc(?wiki_article_count)
