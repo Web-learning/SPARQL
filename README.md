@@ -7,6 +7,8 @@ These SPARQL queries are divided into three main themes
 
 ## 📚 Overall Outcomes 🎯
 
+[Badge Bloom.svg](Badge Bloom.svg)
+
 I'd like to both curate and store and rework the SPARQL queries that I come accross 
 
 ### Credit
