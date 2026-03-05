@@ -1,0 +1,12 @@
+#---------------------------
+#Malayalam lexemes
+#---------------------------
+PREFIX ഡിസി: <http://purl.org/dc/terms/>
+PREFIX വിക്കിഡാറ്റ: <http://www.wikidata.org/entity/>
+
+SELECT ?lexems { 
+   ?lexems  ഡിസി:language വിക്കിഡാറ്റ:Q36236 
+}
+#---------------------------
+#Adapted from a query by Jsamwrites
+#---------------------------
