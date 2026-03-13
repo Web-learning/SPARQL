@@ -1,0 +1,14 @@
+#---------------------------------
+#Prompted with the assistance of chat GPT
+#---------------------------------
+SELECT ?line ?lineLabel ?coord ?geoJSON WHERE {
+  ?line wdt:P31/wdt:P279* wd:Q728 .
+  ?line wdt:P17 wd:Q258 .
+  OPTIONAL { ?line wdt:P625 ?coord }
+  OPTIONAL {
+    ?line wdt:P3896 ?geo .
+    ?geo wdt:P3895 ?geoJSON .
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 200
