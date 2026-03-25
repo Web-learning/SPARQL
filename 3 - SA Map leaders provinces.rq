@@ -1,0 +1,22 @@
+ SELECT DISTINCT ?id ?head
+  (SAMPLE(?img) as ?img_) 
+  (min(?partyId) as ?party) 
+  (if(?party = '0', '#800000', if(?party = '1', '#000080', '#008000')) as ?fill)
+  (concat('[[', substr(str(?link),31,500),  '{{!}}', ?headLabel, ']]') as ?title)
+  (concat(?stateLabel, '\\n', '[[File:', substr(str(?img_), 52, 500), '{{!}}200px]]') as ?description)
+WHERE {  
+  ?id wdt:P31 wd:Q191093 .
+  ?id wdt:P6 ?head .
+  ?head wdt:P102 ?party .
+  BIND(if(?party = wd:Q83162, '0', if(?party = wd:Q761877, '1', '2')) as ?partyId) 
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language 'en' .
+    ?head rdfs:label ?headLabel .
+    ?id rdfs:label ?stateLabel .
+  }
+  OPTIONAL {
+    ?head wdt:P18 ?img .
+  }
+  ?link schema:about ?head .
+  ?link schema:isPartOf <https://en.wikipedia.org/> .
+} GROUP BY ?id ?head ?headLabel ?link ?stateLabel
