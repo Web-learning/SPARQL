@@ -1,0 +1,10 @@
+SELECT ?revenue ?revenueYear ?netIncome ?netIncomeYear WHERE {
+  wd:Q312 p:P2139 ?revenueStatement .
+  ?revenueStatement ps:P2139 ?revenue .
+  OPTIONAL { ?revenueStatement pq:P585 ?revenueYear . }
+
+  wd:Q312 p:P2295 ?netIncomeStatement .
+  ?netIncomeStatement ps:P2295 ?netIncome .
+  OPTIONAL { ?netIncomeStatement pq:P585 ?netIncomeYear . }
+}
+ORDER BY DESC(?revenueYear) DESC(?netIncomeYear)
