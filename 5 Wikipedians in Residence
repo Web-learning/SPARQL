@@ -1,0 +1,16 @@
+# Search for Wikipedians in Residence
+SELECT  ?employerLabel ?item ?itemLabel ?layer ?startyear ?length ?link {
+  ?item p:P106 ?wir .
+  ?wir ps:P106 wd:Q3809586 .
+  OPTIONAL { ?wir pq:P582 ?end . ?wir pqv:P582 [ wikibase:timePrecision ?tp_end]  }
+  OPTIONAL { ?wir pq:P580 ?start . ?wir pqv:P580 [ wikibase:timePrecision ?tp_start] }
+  BIND(IF(?tp_end=?tp_start,
+          CONCAT(STR(12*(YEAR(?end)-YEAR(?start))+MONTH(?end)-MONTH(?start)), ' months'),
+          'duration: not calculable') AS ?length)
+  BIND(IF(!BOUND(?end),   'no end date',   CONCAT('end: ',   STR(YEAR(?end))))   AS ?layer)
+  BIND(IF(!BOUND(?start), 'no start date', CONCAT('start: ', STR(YEAR(?start)))) AS ?startyear)
+  OPTIONAL { ?wir pq:P108 ?employer }
+  OPTIONAL { ?wir pq:P2699 ?link }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ORDER BY DESC(?end)
