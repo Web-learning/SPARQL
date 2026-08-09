@@ -1,0 +1,11 @@
+#South African borders
+#defaultView:Map
+SELECT ?front ?frontLabel ?nature ?natureLabel ?coord WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  ?front wdt:P361 wd:Q17172654  . #Namibia Q2747810, Botswana Q3088673, Zimbabwe Q3088676 Mosambique Q3088674 
+  OPTIONAL { ?front wdt:P31 ?nature. }
+  OPTIONAL { ?front wdt:P625 ?coord. }
+}       
+ORDER BY (?coord )
+
+## Credit to User:Bouzinac/Frontières
