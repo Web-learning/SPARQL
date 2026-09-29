@@ -1,0 +1,39 @@
+SELECT ?district
+       ?districtLabel
+       ?coordinates
+       ?geojson
+       (SAMPLE(?img) AS ?img)
+       (CONCAT(
+           '[[:d:',
+           SUBSTR(STR(?district), 32, 100),
+           ' | ',
+           ?districtLabel,
+           ']]'
+       ) AS ?title)
+
+WHERE {
+  ?district wdt:P31 wd:Q1589568 ;
+            wdt:P17 wd:Q258 .
+
+  OPTIONAL {
+    ?district wdt:P625 ?coordinates .
+  }
+
+  OPTIONAL {
+    ?district wdt:P3896 ?geojson .
+  }
+
+  OPTIONAL {
+    ?district wdt:P18 ?img .
+  }
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+}
+
+GROUP BY
+  ?district
+  ?districtLabel
+  ?coordinates
+  ?geojson
