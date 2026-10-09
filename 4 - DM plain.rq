@@ -1,0 +1,25 @@
+#defaultView:Map
+
+SELECT
+  ?district
+  ?districtLabel
+  ?districtShape
+  ?districtLayer
+  ?province
+  ?provinceLabel
+  ?provinceShape
+  ?provinceLayer
+  ?fill
+WHERE {
+  # 1. Find district municipalities with geoshapes
+  ?district wdt:P31 wd:Q1589568;
+            wdt:P3896 ?districtShape;
+            wdt:P131 ?province.
+
+
+  # 5. Retrieve labels
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+}
+ORDER BY ?provinceLabel ?districtLabel
