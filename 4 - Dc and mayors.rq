@@ -1,0 +1,67 @@
+# District municipalities of South Africa, coloured by province, with mayors
+#defaultView:Map{"hide":["?districtShape", "?rgb", "?layer", "?mayor"],"markercluster":false}
+
+SELECT DISTINCT
+  ?districtShape
+  ?district
+  ?province
+  (SAMPLE(?districtName) AS ?districtLabel)
+  (SAMPLE(?provinceName) AS ?provinceLabel)
+  (SAMPLE(?mayorName) AS ?mayorLabel)
+  (SAMPLE(?layerValue) AS ?layer)
+  (SAMPLE(?colourValue) AS ?rgb)
+WHERE {
+  # 1. Find district municipalities with geoshapes
+  ?district wdt:P31 wd:Q1589568;
+            wdt:P3896 ?districtShape;
+            wdt:P131 ?province.
+
+  # 2. Retrieve English district and province labels
+  ?district rdfs:label ?districtName.
+  FILTER(LANG(?districtName) = "en")
+
+  ?province rdfs:label ?provinceName.
+  FILTER(LANG(?provinceName) = "en")
+
+  # 3. Check whether a mayor is recorded for the district
+  OPTIONAL {
+    ?district wdt:P6 ?mayor.
+
+    ?mayor rdfs:label ?mayorName.
+    FILTER(LANG(?mayorName) = "en")
+  }
+
+  # 4. Assign the province layer
+  BIND(STR(?provinceName) AS ?provinceText)
+
+  BIND(
+    IF(?provinceText = "Eastern Cape", "Eastern Cape",
+    IF(?provinceText = "Free State", "Free State",
+    IF(?provinceText = "Gauteng", "Gauteng",
+    IF(?provinceText = "KwaZulu-Natal", "KwaZulu-Natal",
+    IF(?provinceText = "Limpopo", "Limpopo",
+    IF(?provinceText = "Mpumalanga", "Mpumalanga",
+    IF(?provinceText = "Northern Cape", "Northern Cape",
+    IF(?provinceText = "North West", "North West",
+    IF(?provinceText = "Western Cape", "Western Cape",
+    "Other")))))))))
+    AS ?layerValue
+  )
+
+  # 5. Assign a unique colour to each province
+  BIND(
+    IF(?provinceText = "Eastern Cape", "8DD3C7",
+    IF(?provinceText = "Free State", "BEBADA",
+    IF(?provinceText = "Gauteng", "FFFFB3",
+    IF(?provinceText = "KwaZulu-Natal", "FB8072",
+    IF(?provinceText = "Limpopo", "80B1D3",
+    IF(?provinceText = "Mpumalanga", "FDB462",
+    IF(?provinceText = "Northern Cape", "B3DE69",
+    IF(?provinceText = "North West", "FCCDE5",
+    IF(?provinceText = "Western Cape", "BC80BD",
+    "808080")))))))))
+    AS ?colourValue
+  )
+}
+GROUP BY ?districtShape ?district ?province
+ORDER BY ?provinceLabel ?districtLabel
