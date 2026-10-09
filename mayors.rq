@@ -1,0 +1,19 @@
+SELECT
+?mayor ?mayorLabel ?image ?startDate ?endDate
+WHERE {
+wd:Q5465 p:P6 ?statement.
+?statement ps:P6 ?mayor.
+OPTIONAL {
+?mayor wdt:P18 ?image.
+} 
+OPTIONAL {
+?statement pq:P580 ?startDate.
+}
+OPTIONAL {
+?statement pq:P582 ?endDate.
+}
+SERVICE wikibase:label {
+bd:serviceParam wikibase:language "en".
+}
+}
+ORDER BY ?startDate
