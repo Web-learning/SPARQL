@@ -1,6 +1,4 @@
-# District municipalities of South Africa, coloured by province, with mayors
-#defaultView:Map{"hide":["?districtShape", "?rgb", "?layer", "?mayor"],"markercluster":false}
-
+#defaultView:Map
 SELECT DISTINCT
   ?districtShape
   ?district
@@ -10,6 +8,8 @@ SELECT DISTINCT
   (SAMPLE(?mayorName) AS ?mayorLabel)
   (SAMPLE(?layerValue) AS ?layer)
   (SAMPLE(?colourValue) AS ?rgb)
+  ("#ffffff" AS ?stroke)
+  (1.5 AS ?strokeWidth)
 WHERE {
   # 1. Find district municipalities with geoshapes
   ?district wdt:P31 wd:Q1589568;
@@ -23,10 +23,9 @@ WHERE {
   ?province rdfs:label ?provinceName.
   FILTER(LANG(?provinceName) = "en")
 
-  # 3. Check whether a mayor is recorded for the district
+  # 3. Check whether a mayor is recorded
   OPTIONAL {
     ?district wdt:P6 ?mayor.
-
     ?mayor rdfs:label ?mayorName.
     FILTER(LANG(?mayorName) = "en")
   }
@@ -48,7 +47,7 @@ WHERE {
     AS ?layerValue
   )
 
-  # 5. Assign a unique colour to each province
+  # 5. Assign province colours
   BIND(
     IF(?provinceText = "Eastern Cape", "8DD3C7",
     IF(?provinceText = "Free State", "BEBADA",
