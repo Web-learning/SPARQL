@@ -1,0 +1,35 @@
+SELECT DISTINCT ?state ?stateLabel  ?label_af ?label_zu ?label_xh ?id WHERE {
+  ?state wdt:P31/wdt:P279* wd:Q3624078;
+         p:P463 ?memberOfStatement.
+
+  ?memberOfStatement a wikibase:BestRank;
+                     ps:P463 wd:Q1065.
+  MINUS {
+    ?memberOfStatement pq:P582 ?endTime.
+  }
+  MINUS {
+    ?state wdt:P576|wdt:P582 ?end.
+  }
+  BIND(REPLACE(STR(?state), "^.*/", "") AS ?id)
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+  }
+
+  OPTIONAL {
+    ?state rdfs:label ?label_af.
+    FILTER(LANG(?label_af) = "af")
+  }
+  
+    OPTIONAL {
+    ?state rdfs:label ?label_zu.
+    FILTER(LANG(?label_zu) = "zu")
+  }
+  
+      OPTIONAL {
+    ?state rdfs:label ?label_xh.
+    FILTER(LANG(?label_xh) = "xh")
+  }
+
+}
+ORDER BY ?stateLabel
