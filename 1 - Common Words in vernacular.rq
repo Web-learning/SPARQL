@@ -1,0 +1,20 @@
+SELECT DISTINCT ?language ?article ?articleName
+WHERE {
+  VALUES (?language ?wiki) {
+    ("Afrikaans" <https://af.wikipedia.org/>)
+    ("Ndebele." <https://nr.wikipedia.org/>)
+    ("Sepedi" <https://nso.wikipedia.org/>)
+    ("Setswana" <https://ss.wikipedia.org/>)
+    ("Sesotho" <https://st.wikipedia.org/>)
+    ("Setswana" <https://tn.wikipedia.org/>)
+    ("XiTsonga" <https://ts.wikipedia.org/>)
+    ("Tshivenda" <https://ve.wikipedia.org/>)
+    ("isiXhosa" <https://xh.wikipedia.org/>)
+    ("isiZulu" <https://zu.wikipedia.org/>)
+  }
+
+  ?article schema:about wd:Q11575 ;
+           schema:isPartOf ?wiki ;
+           schema:name ?articleName .
+}
+ORDER BY ?language
