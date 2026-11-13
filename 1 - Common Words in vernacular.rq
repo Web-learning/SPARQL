@@ -13,10 +13,11 @@ WHERE {
     ("isiZulu" <https://zu.wikipedia.org/>)
   }
 
-  #Prompted with chat GPT
-
-  ?article schema:about wd:Q11575 ;
+ ?article schema:about wd:Q11575 ;
            schema:isPartOf ?wiki ;
            schema:name ?articleName .
 }
 ORDER BY ?language
+#---------------------------------
+  #Prompted with chat GPT
+#---------------------------------
